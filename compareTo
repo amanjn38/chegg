@@ -4,44 +4,30 @@
 
 struct Point {
     int x, y;
+    float dis;
 };
 
 
-int getDistance(struct Point p1, struct Point p2)
+int compareTo(Point p1, Point p2)
 {
     int x= 0, y= 0;
-    // double distance;
-    // distance = sqrt((a.x - b.x) * (a.x - b.x) + (a.y-b.y) *(a.y-b.y));
-    // return distance;
-    int fx1,fx2, fy1,fy2;
 
-     int a;
-    
-    fx1 = (p1).x - x;
-    fx2 = (p2).x - x;
-    fy1 = (p1).y - y;
-    fy2 = (p2).y - y;
-    
-    float dist1, dist2;
-    dist1 = sqrt((fx1 * fx1) + (fy1 * fy1));
-    dist2 = sqrt((fx2 * fx2) + (fy2 * fy2));
-
-    if(dist1 < dist2)
+    if(p1.dis<p2.dis)
         a = -1;
-    else if(dist1 > dist2)
+    else if(p1.dis > p2.dis)
         a = 1;    
-    else if(dist1 == dist2)
+    else if(p1.dis == p2.dis)
         {
-            if(fx1 < fx2){
+            if(p1.x-x< p2.x-x){
                 a = -1;
-            }else if(fx2 > fx2){
+            }else if(p2.x-x > p1.x-x){
                 a = 1;
-            }else if(fx1 == fx2){
-                if(fy1 > fy2){
+            }else if(p1.x-x == p2.x-x){
+                if(p1.y-y > p2.y-y){
                     a = 1;
-                }else if(fy1 < fy2){
+                }else if(p1.y-y < p2.y-y){
                     a = -1;
-                }else if(fy1 == fy2){
+                }else if(p1.y-y == p2.y-y){
                     a = 0;
                 }
             }
