@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int binarySearch(int array[], int x,int y, int low, int high) {
+  // Repeat until the pointers low and high meet each other
+  while (low <= high) {
+    int mid = low + (high - low) / 2;
+
+    if (array[mid].x == x && array[mid].y == y)
+      return mid;
+
+    if (array[mid] < x)
+      low = mid + 1;
+
+    else
+      high = mid - 1;
+  }
+
+  return -1;
+}
+
+int main(void) {
+  int n = sizeof(array) / sizeof(array[0]);
+  int i;
+  for(i=n-t;i<n;t++){
+  int x = arr[i].x;
+  int y = arr[i].y;
+  int result = binarySearch(array, x,y, 0, n - t);
+  if (result == -1)`
+    printf(x +  ", " + y , " not found");
+  else
+    printf(x +  ", " + y , "found at" + result);
+      
+  }
+  
+  return 0;
+}
