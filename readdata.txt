@@ -1,0 +1,21 @@
+point* readdata(){
+    FILE *fptr;
+    fptr=fopen(in.txt,"r");
+    c=fgetc(fptr);
+    c=fgetc(fptr);
+    len=fgetc(fptr);
+    c=fgetc(fptr);
+    c=fgetc(fptr);
+    c=fgetc(fptr);
+    point arr[];
+    int i=0;
+    while(!feof(fptr)){
+        c=fgets(fptr);
+        arr[i].x=(int)c;
+        c=fgets(fptr);
+        arr[i].y=(int)c;
+        c=fgets(fptr);
+        i++;
+    }
+    return arr;
+}
