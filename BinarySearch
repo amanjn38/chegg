@@ -21,7 +21,7 @@ int binarySearch(int array[], int x,int y, int low, int high) {
 int main(void) {
   int n = sizeof(array) / sizeof(array[0]);
   int i;
-  for(i=n-t;i<n;t++){
+  for(i=n;i<arr.size;t++){
   int x = arr[i].x;
   int y = arr[i].y;
   int result = binarySearch(array, x,y, 0, n - t);
