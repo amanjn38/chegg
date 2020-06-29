@@ -8,7 +8,7 @@ int binarySearch(int array[], int x,int y, int low, int high) {
     if (array[mid].x == x && array[mid].y == y)
       return mid;
 
-    if (array[mid] < x)
+    if (array[mid].x < x)
       low = mid + 1;
 
     else
@@ -21,9 +21,10 @@ int binarySearch(int array[], int x,int y, int low, int high) {
 int main(void) {
   int n = sizeof(array) / sizeof(array[0]);
   int i;
-  for(i=n;i<arr.size;t++){
+  for(i=0;i<s;t++){
   int x = arr[i].x;
   int y = arr[i].y;
+  
   int result = binarySearch(array, x,y, 0, n - t);
   if (result == -1)`
     printf(x +  ", " + y , " not found");
