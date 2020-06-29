@@ -4,17 +4,18 @@ point* readdata(){
     c=fgetc(fptr);
     c=fgetc(fptr);
     len=fgetc(fptr);
-    c=fgetc(fptr);
+    q=fgetc(fptr);
     c=fgetc(fptr);
     c=fgetc(fptr);
     point arr[];
+    int last=(int)q;
     int i=0;
-    while(!feof(fptr)){
+    while(i<len){
         c=fgets(fptr);
         arr[i].x=(int)c;
         c=fgets(fptr);
         arr[i].y=(int)c;
-        arr[i].dis= sqrt( (arr[i].x-x)*(arr[i].x-x)+(arr[i].y-y)*(arr[i].y-y);
+        arr[i].dis= sqrt( (arr[i].x-x)*(arr[i].x-x)+(arr[i].y-y)*(arr[i].y-y));
         c=fgets(fptr);
         i++;
     }
