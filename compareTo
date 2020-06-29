@@ -23,8 +23,8 @@ int getDistance(struct Point p1, struct Point p2)
     fy2 = (p2).y - y;
     
     float dist1, dist2;
-    dist1 = ((fx1 * fx1) + (fy1 * fy1));
-    dist2 = ((fx2 * fx2) + (fy2 * fy2));
+    dist1 = sqrt((fx1 * fx1) + (fy1 * fy1));
+    dist2 = sqrt((fx2 * fx2) + (fy2 * fy2));
 
     if(dist1 < dist2)
         a = -1;
