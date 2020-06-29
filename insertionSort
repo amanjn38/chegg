@@ -1,4 +1,4 @@
-void insertionSort(int array[], int n) 
+void insertionSort(int array[], int start, int n) 
 { 
     int i, element, j; 
     for (i = 1; i < n; i++) { 
