@@ -1,0 +1,238 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+struct Point {
+    int x, y;
+    float dis;
+};
+
+
+int compareTo(Point p1, Point p2)
+{
+    int x= 0, y= 0;
+
+    if(p1.dis<p2.dis)
+        a = -1;
+    else if(p1.dis > p2.dis)
+        a = 1;    
+    else if(p1.dis == p2.dis)
+        {
+            if(p1.x-x< p2.x-x){
+                a = -1;
+            }else if(p2.x-x > p1.x-x){
+                a = 1;
+            }else if(p1.x-x == p2.x-x){
+                if(p1.y-y > p2.y-y){
+                    a = 1;
+                }else if(p1.y-y < p2.y-y){
+                    a = -1;
+                }else if(p1.y-y == p2.y-y){
+                    a = 0;
+                }
+            }
+        } 
+        return a;
+
+}
+
+***********************************************************************************************
+mergeSort(point a[],int start,int end,int t){
+        if(start<end){
+            int mid=(start+end)/2;
+            mergesort(a,start,mid,t);
+            mergesort(a,mid+1,end,t);
+            merge(a,start,mid,end);
+        }
+    
+}
+void merge(point a[],int start,int mid,int end){
+    int i,j,k;
+    int n1= mid-start+1;
+    int n2=end-mid;
+
+    point L[n1],R[n2];
+    for(int i=0;i<n1;i++){
+        L[i].dis=a[start+i].dis;
+        L[i].x=a[start+i].x;
+        L[i].y=a[start+i].y;
+    }
+    for(int j=0;j<n2;j++){
+        R[i].dis=a[mid+1+j].dis;
+        R[i].x=a[mid+1+j].x;
+        R[i].y=a[mid+1+j].y;
+    }
+
+    i=0;
+    j=0;
+    k=start;
+    while(i<n1 && j<n2){
+        if(L[i].dis<R[j].dis){
+            a[k].x=L[i].x;
+            a[k].y=L[i].y;
+            a[k].dis=L[i].dis;
+            i++
+        }
+        else if(L[i].dis>R[j].dis){
+            a[k].x=R[j].x;
+            a[k].y=R[j].y;
+            a[k].dis=R[j].dis;
+            j++;
+        }
+        else{
+        int a=compareTo(L[i],R[j]);
+            if(a>0){
+             a[k].x=L[i].x;
+            a[k].y=L[i].y;
+            a[k].dis=L[i].dis;
+            i++}
+            else if(a<0){
+                a[k].x=R[j].x;
+            a[k].y=R[j].y;
+            a[k].dis=R[j].dis;
+            j++;
+            }
+        }
+        k++;
+    }
+
+    while(i<n1){
+        a[k].x=L[i].x;
+        a[k].y=L[i].y;
+        a[k].dis=L[i].dis;
+        i++;
+        k++;
+    }
+
+    while(j<n2){
+        a[k].x=R[j].x;
+        a[k].y=R[j].y;
+        a[k].dis=R[j].dis;
+        j++;
+        k++;
+    }
+
+}
+
+
+*************************************************************************************
+void insertionSort(int array[], int start,int end, int n) 
+{ 
+    int i, j; 
+    point element;
+    for (i = 1; i < n; i++) { 
+    element.dis = array[i].dis;
+    element.x = array[i].x;
+    element.y = array[i].y; 
+    j = i - 1; /* Move elements of arr[0..i-1], that are greater than key by one position */
+    while (j >= 0 && array[j].dis > element.dis) { 
+            array[j + 1].x = array[j].x;
+            array[j + 1].y = array[j].y;
+            array[j + 1].dis = array[j].dis;
+            j = j - 1; 
+        } 
+        array[j + 1].x = element.x; 
+        array[j + 1].y= element.y; 
+        array[j + 1].dis = element.dis; 
+    } 
+}
+************************************************************************************
+sort(point a[],int len,int t){
+    if(t>len)
+    mergeSort(a,0,len-1,t);
+    else 
+        insertionSort(a,0,len-1,t);
+}
+********************************************************
+int binarySearch(int array[], int x,int y, int low, int high) {
+  // Repeat until the pointers low and high meet each other
+  while (low <= high) {
+    int mid = low + (high - low) / 2;
+
+    if (array[mid].x == x && array[mid].y == y)
+      return mid;
+
+    if (array[mid].x < x)
+      low = mid + 1;
+
+    else
+      high = mid - 1;
+  }
+
+  return -1;
+}
+***********************************************************888
+point* readdata(){
+    FILE *fptr;
+    fptr=fopen("in.txt","r");
+    c=fgetc(fptr);
+    c=fgetc(fptr);
+    len=fgetc(fptr);
+    q=fgetc(fptr);
+    c=fgetc(fptr);
+    c=fgetc(fptr);
+    point arr[];
+    int last=(int)q;
+    int i=0;
+    while(i<len){
+        c=fgets(fptr);
+        arr[i].x=(int)c;
+        c=fgets(fptr);
+        arr[i].y=(int)c;
+        arr[i].dis= sqrt( (arr[i].x-x)*(arr[i].x-x)+(arr[i].y-y)*(arr[i].y-y));
+        c=fgets(fptr);
+        i++;
+    }
+	fclose(ptr);
+    return arr;
+}
+*******************************************************************
+
+int main(void) {
+	point array=readdata();
+	point arr[];
+	sort(array,sizeof(array)/sizeof(array[0]));
+	FILE *ptr;
+	fopen("in.txt","r");
+	c=fgetc(ptr);
+	c=fgetc(ptr);
+	len=fgetc(ptr);
+	q=fgetc(ptr);
+        c=fgetc(ptr);
+	c=fgetc(ptr);
+	int i=0;
+	while(i<len)
+{	c=fgetc(ptr);
+	c=fgetc(ptr);
+	c=fgetc(ptr);
+	c=fgetc(ptr);
+	i++;
+}
+	int j=0;
+	while(j<q){
+	c=fgets(ptr);
+        arr[i].x=(int)c;
+	c=fgets(ptr);
+        c=fgets(ptr);
+        arr[i].y=(int)c;
+        arr[i].dis= sqrt( (arr[i].x-x)*(arr[i].x-x)+(arr[i].y-y)*(arr[i].y-y));
+        c=fgets(ptr);
+        j++;
+    }
+}
+  int n = sizeof(array) / sizeof(array[0]);
+  int i;
+  for(i=0;i<s;t++){
+  int x = arr[i].x;
+  int y = arr[i].y;
+  
+  int result = binarySearch(array, x,y, 0,s);
+  if (result == -1)`
+    printf(x +  ", " + y , " not found");
+  else
+    printf(x +  ", " + y , "found at" + result);
+      
+  }
+  
+  return 0;
+}
