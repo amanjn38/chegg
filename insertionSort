@@ -1,11 +1,20 @@
-void insertionSort(int array[], int start, int n) 
+void insertionSort(int array[], int start,int end, int n) 
 { 
-    int i, element, j; 
+    int i, j; 
+    point element;
     for (i = 1; i < n; i++) { 
-    element = array[i]; j = i - 1; /* Move elements of arr[0..i-1], that are greater than key by one position */ while (j >= 0 && array[j] > element) { 
-            array[j + 1] = array[j]; 
+    element.dis = array[i].dis;
+    element.x = array[i].x;
+    element.y = array[i].y; 
+    j = i - 1; /* Move elements of arr[0..i-1], that are greater than key by one position */
+    while (j >= 0 && array[j].dis > element.dis) { 
+            array[j + 1].x = array[j].x;
+            array[j + 1].y = array[j].y;
+            array[j + 1].dis = array[j].dis;
             j = j - 1; 
         } 
-        array[j + 1] = element; 
+        array[j + 1].x = element.x; 
+        array[j + 1].y= element.y; 
+        array[j + 1].dis = element.dis; 
     } 
 }
