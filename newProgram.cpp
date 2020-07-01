@@ -15,6 +15,7 @@ struct list{
 class CS_Shop{
     public:
     CS_Shop();
+    ~CS_Shop();
     private:
     int Add_item(char store_name[],item store_itemtoadd);
     int New_Store(char store_name[],char website);
