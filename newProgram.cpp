@@ -19,6 +19,8 @@ class CS_Shop{
     int Add_item(char store_name[],item store_itemtoadd);
     int New_Store(char store_name[],char website);
     int Remove_Item(char item_name[]);
+    int Display_Store(char store_name[]);
+    int Display_Category(char category);
 
 };
 
